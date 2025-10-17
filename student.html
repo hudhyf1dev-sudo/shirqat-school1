@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>لوحة الطالب</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h2>أداء الطالب: علي محمد</h2>
+        <h3>الصف: الرابع علمي</h3>
+
+        <div class="tabs">
+            <button class="tab-btn" onclick="showTab('exams')">الامتحانات</button>
+            <button class="tab-btn" onclick="showTab('attendance')">الحضور والغياب</button>
+        </div>
+
+        <div id="exams" class="tab-content">
+            <h3>الامتحانات</h3>
+            <table>
+                <tr><th>المادة</th><th>شهر أول</th><th>شهر ثاني</th><th>نصف السنة</th></tr>
+                <tr><td>عربي</td><td>85</td><td>90</td><td>80</td></tr>
+                <tr><td>رياضيات</td><td>95</td><td>100</td><td>97</td></tr>
+                <tr><td>علوم</td><td>80</td><td>85</td><td>88</td></tr>
+            </table>
+        </div>
+
+        <div id="attendance" class="tab-content" style="display:none;">
+            <h3>الحضور والغياب</h3>
+            <table>
+                <tr><th>التاريخ</th><th>الحالة</th></tr>
+                <tr><td>2025-10-15</td><td>✅ حاضر</td></tr>
+                <tr><td>2025-10-16</td><td>❌ غائب</td></tr>
+                <tr><td>2025-10-17</td><td>✅ حاضر</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tab) {
+            document.getElementById('exams').style.display = 'none';
+            document.getElementById('attendance').style.display = 'none';
+            document.getElementById(tab).style.display = 'block';
+        }
+    </script>
+</body>
+</html>

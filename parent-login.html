@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>دخول ولي الأمر</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>تسجيل دخول ولي الأمر</h2>
+        <form id="parent-login-form">
+            <input type="text" id="student-name" placeholder="اسم الطالب" required>
+            <input type="text" id="student-code" placeholder="كود الطالب" required>
+            <button type="submit">دخول</button>
+        </form>
+        <p id="login-error" style="color:red; display:none;">الكود أو الاسم غير صحيح</p>
+    </div>
+
+    <script>
+        // مؤقت بدون Firebase — توضيح الشكل فقط
+        const form = document.getElementById('parent-login-form');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('student-name').value;
+            const code = document.getElementById('student-code').value;
+
+            // حالياً مجرد توجيه وهمي لل Dashboard
+            if(name && code) {
+                window.location.href = "student.html";
+            } else {
+                document.getElementById('login-error').style.display = "block";
+            }
+        });
+    </script>
+</body>
+</html>
